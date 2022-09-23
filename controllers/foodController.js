@@ -8,10 +8,10 @@ const getWelcomeMessage = asyncHandler(async(req, res) => {
 
 
 const getFavoriteFood = asyncHandler(async(req, res) => {
-   await foodApi.find((err, data) => {
+   await foodApi.find({}, (err, data) => {
        
         return res.status(200).send(data);
-    })
+    }).clone().catch(function(err){ console.log(err)})
 })
 
 const postFavoriteFood = asyncHandler(async(req, res) => {
