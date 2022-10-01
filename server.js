@@ -21,7 +21,7 @@ app.use(errorHandler);
 connectDB();
 
 
-app.use('/food/api/v2/favorites', foodData);
+app.use('/food/api/v1/favorites', foodData);
 
 
 app.listen(port, () => {
